@@ -4,41 +4,25 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10f;
-    public float turnSpeed = 1f;
-    Rigidbody2D rigidbody;
-
+    //public
     public Joystick joystick;
+    public float speed = 10f;
+
+    //private
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.freezeRotation = true;
+        rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
     }
     void Update()
     {
-
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-        h += joystick.Horizontal;
-        v += joystick.Vertical;
+        float h = joystick.Horizontal;
+        float v = joystick.Vertical;
 
         Vector2 dir = new Vector2(h, v);
-        rigidbody.velocity = dir * speed;
-
-        RotationToMovementDirection();
-    }
-
-    private void RotationToMovementDirection()
-    {
-            Vector2 moveDirection = rigidbody.velocity;
-            if (moveDirection != Vector2.zero)
-            {
-                float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            }
-
+        rb.velocity = dir * speed;
     }
 }
