@@ -13,6 +13,7 @@ public class PlayerShooting : MonoBehaviour
 
     Rigidbody2D rb;
     float lastShotTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,9 @@ public class PlayerShooting : MonoBehaviour
     void Update()
     {
         RotatePlayer();
-        Shoot();
+
+        if (joystick.GetComponent<JoystickController>().isPressed)
+            Shoot();
     }
 
     public void RotatePlayer()
@@ -34,7 +37,6 @@ public class PlayerShooting : MonoBehaviour
 
         Vector2 dir = new Vector2(h, v);
 
-        rb.velocity = dir;
         if (dir != Vector2.zero)
         {
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;

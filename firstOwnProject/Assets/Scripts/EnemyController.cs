@@ -56,15 +56,15 @@ public class EnemyController : MonoBehaviour
             return;
         }
         PlayerMovement p = collision.GetComponent<PlayerMovement>();
-        if (p)
-        {
-            Destroy(player);
-            AudioManager.instance.PlayHitSound();
-            GameManager.instance.SetGameOver();
-            PlayerPrefs.SetInt("Highscore", score);
-            SceneManager.LoadScene(0);
-            return;
-        }
+        //if (p)
+        //{
+        //    Destroy(player);
+        //    AudioManager.instance.PlayHitSound();
+        //    GameManager.instance.SetGameOver();
+        //    PlayerPrefs.SetInt("Highscore", score);
+        //    SceneManager.LoadScene(0);
+        //    return;
+        //}
 
     }
 }

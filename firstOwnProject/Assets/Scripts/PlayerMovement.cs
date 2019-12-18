@@ -25,4 +25,6 @@ public class PlayerMovement : MonoBehaviour
         Vector2 dir = new Vector2(h, v);
         rb.velocity = dir * speed;
     }
+
+
 }
