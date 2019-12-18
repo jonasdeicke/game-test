@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    Rigidbody2D rigidbody;
+    Rigidbody2D rb;
     float startTime;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody=gameObject.GetComponent<Rigidbody2D>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
         startTime = Time.time;
     }
 
@@ -19,7 +19,7 @@ public class BulletController : MonoBehaviour
         float deltaTime = Time.time - startTime;
         if (deltaTime < 1)
         {
-            rigidbody.velocity *= 1 - deltaTime;
+            rb.velocity *= 1 - deltaTime;
         }
         else
         {

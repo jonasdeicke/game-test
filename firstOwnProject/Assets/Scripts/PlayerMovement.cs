@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //public
     public Joystick joystick;
-    public float speed = 10f;
+    public float speed = 5f;
 
     //private
     Rigidbody2D rb;

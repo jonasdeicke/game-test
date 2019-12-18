@@ -26,7 +26,10 @@ public class PlayerShooting : MonoBehaviour
     {
         RotatePlayer();
 
-        if (joystick.GetComponent<JoystickController>().isPressed)
+        float h = joystick.Horizontal;
+        float v = joystick.Vertical;
+
+        if (h!=0f || v!=0f)
             Shoot();
     }
 

@@ -11,14 +11,10 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D rb;
     public float moveSpeed = 1f;
     private Vector2 movement;
-
-    static int score=0;
     // Start is called before the first frame update
     void Start()
     {
         player= GameObject.Find("PlayerImage");
-        
-
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -52,19 +48,17 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
             AudioManager.instance.PlayHitSound();
-            score++;
+            GameManager.instance.IncreaseScore();
             return;
         }
         PlayerMovement p = collision.GetComponent<PlayerMovement>();
-        //if (p)
-        //{
-        //    Destroy(player);
-        //    AudioManager.instance.PlayHitSound();
-        //    GameManager.instance.SetGameOver();
-        //    PlayerPrefs.SetInt("Highscore", score);
-        //    SceneManager.LoadScene(0);
-        //    return;
-        //}
+        if (p)
+        {
+            //Destroy(player);
+            AudioManager.instance.PlayHitSound();
+            GameManager.instance.SetGameOver();
+            return;
+        }
 
     }
 }
