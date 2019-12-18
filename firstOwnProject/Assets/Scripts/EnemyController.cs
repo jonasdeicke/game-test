@@ -11,6 +11,9 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D rb;
     public float moveSpeed = 1f;
     private Vector2 movement;
+
+    public int health=3;
+    public ParticleSystem ps;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,9 +49,16 @@ public class EnemyController : MonoBehaviour
         BulletController b = collision.GetComponent<BulletController>();
         if (b)
         {
-            Destroy(gameObject);
-            AudioManager.instance.PlayHitSound();
-            GameManager.instance.IncreaseScore();
+            health--;
+            //Destroy(collision.gameObject);
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+                ParticleSystem instance = Instantiate(ps, transform.position, Quaternion.identity);
+                Destroy(instance.gameObject, instance.main.duration);
+                AudioManager.instance.PlayHitSound();
+                GameManager.instance.IncreaseScore();
+            }
             return;
         }
         PlayerMovement p = collision.GetComponent<PlayerMovement>();

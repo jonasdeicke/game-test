@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public Vector3 spawnValues = new Vector3(14, 14, 0);
     public float minSpawnDistance = 5f;
-    Camera cam;
 
     public static GameManager instance;
     public static int score = 0;
@@ -28,7 +27,6 @@ public class GameManager : MonoBehaviour
         lastSpawnTime = Time.time;
         score = 0;
         player = GameObject.Find("PlayerImage");
-        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -70,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     public bool IsOnScreen(Vector3 position)
     {
-        Vector3 screenPoint = cam.WorldToViewportPoint(position);
+        Vector3 screenPoint = Camera.main.WorldToViewportPoint(position);
         bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
         return onScreen;
     }
