@@ -7,7 +7,8 @@ public class PlayerShooting : MonoBehaviour
 {
     public Joystick joystick;
     public GameObject bulletPrefab;
-    public float bulletOffset=0.7f;
+    public Vector2 bulletOffset = new Vector2(0.7f, -1f);
+
     public float bulletSpeed = 20f;
     public float minTimeBetweenShots = 0.3f;
 
@@ -55,7 +56,7 @@ public class PlayerShooting : MonoBehaviour
             Vector3 playerDirection = transform.right;
             Quaternion playerRotation = transform.rotation;
 
-            Vector3 spawnPos = playerPos + playerDirection * bulletOffset;
+            Vector3 spawnPos = playerPos + playerDirection + (new Vector3(bulletOffset.x, bulletOffset.y));
 
             GameObject bullet = Instantiate(bulletPrefab, spawnPos, playerRotation);
             bullet.GetComponent<Rigidbody2D>().velocity = playerDirection * bulletSpeed;
