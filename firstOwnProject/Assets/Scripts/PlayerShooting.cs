@@ -8,11 +8,9 @@ public class PlayerShooting : MonoBehaviour
 {
     public Joystick joystick;
     public GameObject bulletPrefab;
-    public float bulletOffset=0.7f;
     public float bulletSpeed = 20f;
     public float minTimeBetweenShots = 0.3f;
-
-    public Vector3 offsetVector = new Vector3(-1, -1, 0);
+    public Vector3 offsetVector = new Vector3(0.3f, -0.9f, 0f);
 
     Rigidbody2D rb;
     float lastShotTime;

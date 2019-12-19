@@ -146,7 +146,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 407168217
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 72dc90c93a450e54083baf2543d3afbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -225,7 +225,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 407168217
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3fa235eec6ed66147b58d5ed3e641fb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -304,7 +304,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 407168217
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 33315955b45c8424da861c1258350e10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -501,9 +501,10 @@ MonoBehaviour:
   joystick: {fileID: 0}
   bulletPrefab: {fileID: 4718958791847893682, guid: a6fe0505901a12c46bcd8f22bf91cd8a,
     type: 3}
-  bulletOffset: {x: 0.7, y: -1}
+  bulletOffset: 0.7
   bulletSpeed: 20
   minTimeBetweenShots: 0.3
+  offsetVector: {x: 0.3, y: -0.9, z: 0}
 --- !u!114 &1422378493
 MonoBehaviour:
   m_ObjectHideFlags: 0
