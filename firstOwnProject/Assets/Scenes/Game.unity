@@ -2182,6 +2182,14 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1131957867}
+    - target: {fileID: 1422378492, guid: d1a3adade25b428499ea9204db550e2c, type: 3}
+      propertyPath: offsetVector.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422378492, guid: d1a3adade25b428499ea9204db550e2c, type: 3}
+      propertyPath: offsetVector.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1422378493, guid: d1a3adade25b428499ea9204db550e2c, type: 3}
       propertyPath: joystick
       value: 

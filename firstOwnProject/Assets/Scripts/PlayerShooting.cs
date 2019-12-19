@@ -58,12 +58,12 @@ public class PlayerShooting : MonoBehaviour
             Vector3 playerDirection = transform.right;
             Quaternion playerRotation = transform.rotation;
 
-            Vector3 spawnPos = playerPos + playerDirection * bulletOffset;
+            //bullet offset
+            Vector3 v3=transform.InverseTransformPoint(playerPos);
+            v3+= offsetVector;
+            playerPos = transform.TransformPoint(v3);
 
-            //Vector3 v3=transform.TransformPoint(playerPos);
-            //v3+= offsetVector;
-            //playerPos = transform.InverseTransformPoint(v3);
-            //Vector3 spawnPos = playerPos + playerDirection;
+            Vector3 spawnPos = playerPos + playerDirection;
 
             GameObject bullet = Instantiate(bulletPrefab, spawnPos, playerRotation);
             bullet.GetComponent<Rigidbody2D>().velocity = playerDirection * bulletSpeed;
