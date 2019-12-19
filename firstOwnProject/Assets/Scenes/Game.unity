@@ -712,6 +712,14 @@ MonoBehaviour:
       type: 3}
     spawnInterval: 1
     maxEnemies: 5
+  - enemyPrefab: {fileID: 5508509556720015165, guid: 5c86b8f90f3aa4d46a7563d32c0937c7,
+      type: 3}
+    spawnInterval: 0.875
+    maxEnemies: 10
+  - enemyPrefab: {fileID: 5508509556720015165, guid: 5c86b8f90f3aa4d46a7563d32c0937c7,
+      type: 3}
+    spawnInterval: 0.75
+    maxEnemies: 20
   timeBetweenWaves: 5
   spawnValues: {x: 14, y: 14, z: 0}
   minSpawnDistance: 5
