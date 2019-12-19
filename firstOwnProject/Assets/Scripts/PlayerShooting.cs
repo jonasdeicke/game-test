@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,10 +8,11 @@ public class PlayerShooting : MonoBehaviour
 {
     public Joystick joystick;
     public GameObject bulletPrefab;
-    public Vector2 bulletOffset = new Vector2(0.7f, -1f);
-
+    public float bulletOffset=0.7f;
     public float bulletSpeed = 20f;
     public float minTimeBetweenShots = 0.3f;
+
+    public Vector3 offsetVector = new Vector3(-1, -1, 0);
 
     Rigidbody2D rb;
     float lastShotTime;
@@ -56,7 +58,12 @@ public class PlayerShooting : MonoBehaviour
             Vector3 playerDirection = transform.right;
             Quaternion playerRotation = transform.rotation;
 
-            Vector3 spawnPos = playerPos + playerDirection + (new Vector3(bulletOffset.x, bulletOffset.y));
+            Vector3 spawnPos = playerPos + playerDirection * bulletOffset;
+
+            //Vector3 v3=transform.TransformPoint(playerPos);
+            //v3+= offsetVector;
+            //playerPos = transform.InverseTransformPoint(v3);
+            //Vector3 spawnPos = playerPos + playerDirection;
 
             GameObject bullet = Instantiate(bulletPrefab, spawnPos, playerRotation);
             bullet.GetComponent<Rigidbody2D>().velocity = playerDirection * bulletSpeed;
@@ -66,5 +73,4 @@ public class PlayerShooting : MonoBehaviour
             lastShotTime = Time.time;
         }
     }
-
 }
