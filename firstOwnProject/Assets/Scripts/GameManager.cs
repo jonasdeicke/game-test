@@ -8,11 +8,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
+    public Text waveText;
 
     public static GameManager instance;
     public static int score = 0;
+    public static int wave = 0;
 
-    int wave;
     GameObject player;
 
     // Start is called before the first frame update
@@ -20,8 +21,9 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         score = 0;
-        player = GameObject.Find("PlayerImage");
         SetWave(0);
+        player = GameObject.Find("PlayerImage");
+
     }
 
     // Update is called once per frame
@@ -38,6 +40,10 @@ public class GameManager : MonoBehaviour
     public void SetWave(int value)
     {
         wave = value;
+        if (waveText != null)
+        {
+            waveText.text = "Wave: " + (wave + 1);
+        }
     }
 
     internal void SetGameOver()

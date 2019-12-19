@@ -61,14 +61,15 @@ public class EnemyController : MonoBehaviour
             }
             return;
         }
-        //PlayerMovement p = collision.GetComponent<PlayerMovement>();
-        //if (p)
-        //{
-        //    //Destroy(player);
-        //    AudioManager.instance.PlayHitSound();
-        //    GameManager.instance.SetGameOver();
-        //    return;
-        //}
+        PlayerMovement p = collision.GetComponent<PlayerMovement>();
+        if (p)
+        {
+            //Destroy(player);
+            p.DecreaseHealth(1);
+            AudioManager.instance.PlayHitSound();
+            //GameManager.instance.SetGameOver();
+            return;
+        }
 
     }
 }

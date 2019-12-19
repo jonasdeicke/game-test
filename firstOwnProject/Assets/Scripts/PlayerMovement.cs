@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Joystick joystick;
     public float speed = 5f;
 
+    public int health = 3;
+    public Image[] healthImages;
     //private
     Rigidbody2D rb;
 
@@ -26,5 +30,24 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = dir * speed;
     }
 
+    public void DecreaseHealth(int value)
+    {
+        health -= value;
+        if (health > 0)
+        {
+            ShowHearts();
+        }
+        else
+        { 
+            GameManager.instance.SetGameOver(); 
+        }
+    }
 
+    private void ShowHearts()
+    {
+        for(int i=0;i< healthImages.Length; i++)
+        {
+            healthImages[i].enabled=i<health;
+        }
+    }
 }
