@@ -57,18 +57,18 @@ public class EnemyController : MonoBehaviour
                 ParticleSystem instance = Instantiate(ps, transform.position, Quaternion.identity);
                 Destroy(instance.gameObject, instance.main.duration);
                 AudioManager.instance.PlayHitSound();
-                GameManager.instance.IncreaseScore();
+                GameManager.instance.IncreaseScore(1);
             }
             return;
         }
-        PlayerMovement p = collision.GetComponent<PlayerMovement>();
-        if (p)
-        {
-            //Destroy(player);
-            AudioManager.instance.PlayHitSound();
-            GameManager.instance.SetGameOver();
-            return;
-        }
+        //PlayerMovement p = collision.GetComponent<PlayerMovement>();
+        //if (p)
+        //{
+        //    //Destroy(player);
+        //    AudioManager.instance.PlayHitSound();
+        //    GameManager.instance.SetGameOver();
+        //    return;
+        //}
 
     }
 }

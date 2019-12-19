@@ -678,6 +678,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 707715575}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &885014769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885014771}
+  - component: {fileID: 885014770}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &885014770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885014769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32433247658a954aafe66f33421e64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - enemyPrefab: {fileID: 5508509556720015165, guid: 5c86b8f90f3aa4d46a7563d32c0937c7,
+      type: 3}
+    spawnInterval: 1
+    maxEnemies: 5
+  timeBetweenWaves: 5
+  spawnValues: {x: 14, y: 14, z: 0}
+  minSpawnDistance: 5
+--- !u!4 &885014771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885014769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1029274163
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +950,7 @@ RectTransform:
   - {fileID: 1131957868}
   - {fileID: 1817463037}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1329,7 +1380,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1817463036
 GameObject:
@@ -1765,7 +1816,7 @@ PrefabInstance:
     - target: {fileID: 7417171059617636168, guid: d96cdbbba0248b3469799d6553b972a1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7417171059617636168, guid: d96cdbbba0248b3469799d6553b972a1,
         type: 3}
@@ -1844,7 +1895,7 @@ PrefabInstance:
     - target: {fileID: 8379739828764523689, guid: d1a3adade25b428499ea9204db550e2c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8379739828764523689, guid: d1a3adade25b428499ea9204db550e2c,
         type: 3}
