@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource playerShot;
     public AudioSource hitSound;
     public AudioSource gameMusic;
+    public AudioSource playerHitSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,11 @@ public class AudioManager : MonoBehaviour
     public void PlayHitSound()
     {
         hitSound.Play();
+    }
+
+    public void PlayPlayerHitSound()
+    {
+        playerHitSound.Play();
     }
 
     public void PlayGameMusic()

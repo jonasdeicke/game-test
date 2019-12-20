@@ -501,10 +501,10 @@ MonoBehaviour:
   joystick: {fileID: 0}
   bulletPrefab: {fileID: 4718958791847893682, guid: a6fe0505901a12c46bcd8f22bf91cd8a,
     type: 3}
-  bulletOffset: 0.7
   bulletSpeed: 20
   minTimeBetweenShots: 0.3
   offsetVector: {x: 0.3, y: -0.9, z: 0}
+  animator: {fileID: 714150712}
 --- !u!114 &1422378493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +519,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
   speed: 5
-  animator: {fileID: 714150712}
   health: 3
   healthImages:
   - {fileID: 0}

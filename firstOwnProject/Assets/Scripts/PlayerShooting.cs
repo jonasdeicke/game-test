@@ -11,6 +11,7 @@ public class PlayerShooting : MonoBehaviour
     public float bulletSpeed = 20f;
     public float minTimeBetweenShots = 0.3f;
     public Vector3 offsetVector = new Vector3(0.3f, -0.9f, 0f);
+    public Animator animator;
 
     Rigidbody2D rb;
     float lastShotTime;
@@ -67,6 +68,8 @@ public class PlayerShooting : MonoBehaviour
             bullet.GetComponent<Rigidbody2D>().velocity = playerDirection * bulletSpeed;
 
             AudioManager.instance.PlayPlayerShot();
+            //animator.Play("PlayerShooting");
+            animator.SetTrigger("shotFired");
 
             lastShotTime = Time.time;
         }

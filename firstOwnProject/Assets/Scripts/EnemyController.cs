@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour
         {
             //Destroy(player);
             p.DecreaseHealth(1);
-            AudioManager.instance.PlayHitSound();
+            AudioManager.instance.PlayPlayerHitSound();
             //GameManager.instance.SetGameOver();
             return;
         }

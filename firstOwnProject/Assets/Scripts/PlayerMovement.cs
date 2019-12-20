@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     //public
     public Joystick joystick;
     public float speed = 5f;
-    public Animator animator;
     public int health = 3;
     public Image[] healthImages;
     //private
@@ -28,15 +27,6 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 dir = new Vector2(h, v);
         rb.velocity = dir * speed;
-
-        if((h!=0f)||(v!=0f))
-        {
-            animator.SetBool("isRunning",true);
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
-        }
     }
 
     public void DecreaseHealth(int value)
