@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
         float h = joystick.Horizontal;
         float v = joystick.Vertical;
 
+        h += Input.GetAxis("Horizontal");
+        v += Input.GetAxis("Vertical");
+
         Vector2 dir = new Vector2(h, v);
         rb.velocity = dir * speed;
     }
